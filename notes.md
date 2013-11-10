@@ -38,6 +38,10 @@ done
  #ominauth
 
 
+ #new class FoursquareClient
+  #in initialize you will draw on the env
+
+
 
 
 

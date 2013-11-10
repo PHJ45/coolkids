@@ -6,14 +6,18 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new(:venue_id => params[:venue_id])
-    @review.user_id = sessions[:user_id]
+    #@review.user_id = sessions[:user_id]
   end
 
   def create 
-    @review = Review.new(review_params)
-    @review.save
-
-    redirect_to venue_path(@review.venue)
+    @review = current_user.reviews.create(review_params)
+    if @review.persisted?
+      flash[:notice] = "Your review was created!"
+      redirect_to venue_path(@review.venue)
+    else
+      flash[:notice] = "There was a problem. Try again."
+      redirect_to new_review_path
+    end
   end
 
   private

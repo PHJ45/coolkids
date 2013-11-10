@@ -7,9 +7,9 @@
 <% @venue.reviews.each do |review| %>
   <div class="well">
     <img src="http://placehold.it/50x50" class="img-circle" >
-    <h5>User <%= review.user_id %> </h5>
-    <p><strong>comment :</strong>  <%= review.description %></p>
-    <p><strong>stars </strong>  <%= review.stars %></p>
+    <h4><%= review.user.name%> </h4>
+    <p><%= review.description %></p>
+    <p><strong>Stars </strong>  <%= review.stars %></p>
   </div>
 <%end%>
 

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# RAILS DEFAULTS
+#RAILS DEFAULTS
 gem 'rails', '4.0.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -14,12 +14,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-#A+H
-
+#PHJ
 gem 'unicorn'
 gem 'devise'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem 'omniauth-twitter'
+gem 'quimby'
 
 #PRESTO
 group :test, :development do
