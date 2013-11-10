@@ -21,3 +21,4 @@ public/uploads/
 config/config_vars.yml
 *.DS_Store
 *.db
+development.log

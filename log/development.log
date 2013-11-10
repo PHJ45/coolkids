@@ -761,6 +761,7 @@ Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-09 15
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-09 15:31:57 -0500
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2013-11-09 17:36:46 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by PagesController#home as HTML
@@ -1031,6 +1032,30 @@ AbstractController::ActionNotFound - The action 'twitter' could not be found for
   activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
   actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
   actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+=======
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-09 16:18:26 -0500
+
+Errno::ENOENT - No such file or directory - /Users/jansonp/Development/projects/coolkids/coolkids/db:
+  activerecord (4.0.1) lib/active_record/connection_adapters/sqlite3_adapter.rb:23:in `sqlite3_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  activerecord (4.0.1) lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  activerecord (4.0.1) lib/active_record/connection_handling.rb:53:in `connection'
+  activerecord (4.0.1) lib/active_record/connection_handling.rb:92:in `clear_cache!'
+  activerecord (4.0.1) lib/active_record/railtie.rb:195:in `block (3 levels) in <class:Railtie>'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:387:in `_run__1315389103600808809__prepare__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:62:in `call'
+>>>>>>> 49090b438cf5a03bd92c7be18e162c9acd5477ed
   actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
   better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
   better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
@@ -1052,6 +1077,7 @@ AbstractController::ActionNotFound - The action 'twitter' could not be found for
   rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
   railties (4.0.1) lib/rails/engine.rb:511:in `call'
   railties (4.0.1) lib/rails/application.rb:97:in `call'
+<<<<<<< HEAD
   rack (1.5.2) lib/rack/lint.rb:49:in `_call'
   rack (1.5.2) lib/rack/lint.rb:37:in `call'
   rack (1.5.2) lib/rack/showexceptions.rb:24:in `call'
@@ -1419,6 +1445,37 @@ extra: !ruby/hash:OmniAuth::AuthHash
   activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
   actionpack (4.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
   actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+=======
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70167663369360/variables" for 127.0.0.1 at 2013-11-09 16:18:26 -0500
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2013-11-09 16:18:26 -0500
+
+LoadError - cannot load such file -- /Users/jansonp/Development/projects/coolkids/coolkids/config/routes.rb:
+  activesupport (4.0.1) lib/active_support/dependencies.rb:223:in `block in load'
+  activesupport (4.0.1) lib/active_support/dependencies.rb:214:in `load_dependency'
+  activesupport (4.0.1) lib/active_support/dependencies.rb:223:in `load'
+  railties (4.0.1) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (4.0.1) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (4.0.1) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (4.0.1) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (4.0.1) lib/active_support/file_update_checker.rb:75:in `execute'
+  railties (4.0.1) lib/rails/application/routes_reloader.rb:7:in `execute'
+  railties (4.0.1) lib/rails/application/finisher.rb:81:in `block (2 levels) in <module:Finisher>'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:407:in `_run__1315389103600808809__prepare__callbacks'
+  activesupport (4.0.1) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+  actionpack (4.0.1) lib/action_dispatch/middleware/reloader.rb:62:in `call'
+>>>>>>> 49090b438cf5a03bd92c7be18e162c9acd5477ed
   actionpack (4.0.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
   better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
   better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
@@ -1440,6 +1497,7 @@ extra: !ruby/hash:OmniAuth::AuthHash
   rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
   railties (4.0.1) lib/rails/engine.rb:511:in `call'
   railties (4.0.1) lib/rails/application.rb:97:in `call'
+<<<<<<< HEAD
   rack (1.5.2) lib/rack/lint.rb:49:in `_call'
   rack (1.5.2) lib/rack/lint.rb:37:in `call'
   rack (1.5.2) lib/rack/showexceptions.rb:24:in `call'
@@ -1464,3 +1522,12 @@ Started POST "/__better_errors/70186323694860/eval" for 127.0.0.1 at 2013-11-09 
 
 
 Started POST "/__better_errors/70186323694860/eval" for 127.0.0.1 at 2013-11-09 18:03:59 -0500
+=======
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jansonp/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+>>>>>>> 49090b438cf5a03bd92c7be18e162c9acd5477ed
