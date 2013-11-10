@@ -22,7 +22,7 @@
         <ul class="nav navbar-nav pull-right">
           <% if user_signed_in? %>
             <li> <%= link_to "venues", venues_path %> </li>
-            <li> <%= link_to "profile", edit_user_registration_path %> </li>
+            <li> <%#= link_to "profile", edit_user_registration_path %> </li>
             <!-- <li> <img src =" " </li> -->
           <% else %>
             <li> <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> </li>
