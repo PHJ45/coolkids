@@ -1,1 +1,7 @@
-new.html.erb
+<h4>Write a Review for : <%=@review.venue.name.capitalize%></h4>
+
+<%= render 'form' %>
+<br>
+<%= link_to 'Back', venues_path %>
+
+

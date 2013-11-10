@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   def create 
-    @review = Review.new(invite_params)
+    @review = Review.new(review_params)
     @review.save
     redirect_to venue_path(@review.venue)
   end

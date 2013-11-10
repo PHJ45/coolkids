@@ -1,1 +1,16 @@
-_form.html.erb
+
+
+
+<%= form_for(@review) do |f| %>
+  <div class="field">
+    <%= f.label :description %>
+    <br>
+    <%= f.text_field :description%>
+    <%#= f.hidden_field :user_id  %>
+    <%= f.hidden_field :venue_id %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<%end%>

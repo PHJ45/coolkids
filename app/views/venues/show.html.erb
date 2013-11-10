@@ -1,7 +1,12 @@
-<h4>Name of venue:</h4>
-<p>
-  <%= @venue.name %>
-</p>
+<h4><%= @venue.name.capitalize %></h4>
+<ul>
+  <% @venue.reviews.each do |review| %>
+  <li><strong>user:</strong>  <%= review.user_id %></li>
+  <p><strong>comment:</strong>  <%= review.description %></p>
 
+  <%end%>
+</ul>
+
+
+<%= link_to 'add a review', new_venue_review_path(@venue) %><br>
 <%= link_to 'back', venues_path %><br>
-<%= link_to 'add a review', new_venue_review_path %>
