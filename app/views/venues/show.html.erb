@@ -1,12 +1,24 @@
-<h4><%= @venue.name.capitalize %></h4>
-<ul>
-  <% @venue.reviews.each do |review| %>
-  <li><strong>user:</strong>  <%= review.user_id %></li>
-  <p><strong>comment:</strong>  <%= review.description %></p>
 
-  <%end%>
-</ul>
+  <h3><%= @venue.name.capitalize %></h3>
+
+    <%= link_to 'Venues', venues_path, :class => "btn" %>
+    <%= link_to 'Add Review', new_venue_review_path(@venue), :class => "btn" %>
+
+<% @venue.reviews.each do |review| %>
+  <div class="well">
+    <img src="http://placehold.it/50x50" class="img-circle" >
+    <h5>User <%= review.user_id %> </h5>
+    <p><strong>comment :</strong>  <%= review.description %></p>
+    <p><strong>stars </strong>  <%= review.stars %></p>
+  </div>
+<%end%>
 
 
-<%= link_to 'add a review', new_venue_review_path(@venue) %><br>
-<%= link_to 'back', venues_path %><br>
+
+
+
+
+
+
+
+
