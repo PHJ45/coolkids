@@ -25,7 +25,7 @@
             <li> <%= link_to "profile", edit_user_registration_path %> </li>
             <!-- <li> <img src =" " </li> -->
           <% else %>
-            <li> <%= link_to "Sign in with Twitter", "/auth/twitter" %> </li>
+            <li> <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> </li>
           <% end %>
       </ul>
     </div> <!-- /.navbar-collapse -->

@@ -19,6 +19,7 @@ end
 gem 'unicorn'
 gem 'devise'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
+gem 'omniauth-twitter'
 
 #PRESTO
 group :test, :development do

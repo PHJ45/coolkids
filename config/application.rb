@@ -9,6 +9,8 @@ require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+load(File.expand_path('../configuration_variables_to_env.rb', __FILE__))
+
 Bundler.require(:default, Rails.env)
 
 module Coolkids
