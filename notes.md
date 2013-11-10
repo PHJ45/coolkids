@@ -33,5 +33,16 @@ devise
 #authentication
 
 
+done
+ #devise
+ #ominauth
+
+
+
+
+
+
+
+
 
 
