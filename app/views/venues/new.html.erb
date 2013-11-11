@@ -1,6 +1,29 @@
 <h1>New Venue</h1>
 
-<%= render 'form' %>
+<%= link_to 'Back', venues_path %>
+
+<%= form_tag("/venues/search_foursquare", method: "post") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <br>
-<%= link_to 'Back', venues_path %>
+<%= render 'form' %>
+<br>
+
+<div id="search_results" class="row">
+  <% if @search_results %>
+    <% @search_results['places'].each do |place| %>
+      <div class="well">
+        <p><%= place.name %></p>
+        <p><%= place.location['address']%></p>
+        <p><%#= place.contact['phone'] %></p>
+      </div>
+    <%end%>
+  <%end%>
+
+</div>
+
+
+

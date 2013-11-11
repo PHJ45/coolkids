@@ -22,8 +22,14 @@ class VenuesController < ApplicationController
     client_secret   = ENV["FOURSQUARE_CONSUMER_SECRET"]
     client_id       = ENV["FOURSQUARE_CONSUMER_KEY"]
     foursquare      = Foursquare::Base.new( client_id , client_secret)
-    @search_results = foursquare.venues.search(:query => params[:q], :ll => "40.6700 , 73.9400")
-    @venue = Venue.new
+
+    if params[:query]
+      @search_results = foursquare.venues.search(:query => params[:query], :ll => "40.6700 , -73.9400")
+      #raise @search_results.to_yaml
+      @venue = Venue.new
+    else
+      flash[:notice] = "Try again"
+    end
     render 'venues/new'
   end
 
@@ -33,6 +39,11 @@ class VenuesController < ApplicationController
   end
 
 end
+
+
+  
+
+
 
 
 
