@@ -1,8 +1,7 @@
 
 <h3><%= @venue.name.capitalize %></h3>
 
-    <%= link_to 'Venues', venues_path, :class => "btn" %>
-    <%= link_to 'Add Review', new_venue_review_path(@venue), :class => "btn" %>
+<%= link_to 'Add Review', new_venue_review_path(@venue), :class => "btn" %>
 
 <% @venue.reviews.each do |review| %>
   <div class="well">
