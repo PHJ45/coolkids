@@ -1,10 +1,7 @@
 class User < ActiveRecord::Base
   
-  has_many :reviews
+  has_many :reviews, :dependent => :destroy
   has_many :venues, through: :reviews
-
-
-
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,7 +15,9 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.name = auth.info.nickname
+      user.name = auth.info.name
+      user.twitter_handle = auth.info.nickname
+      user.img_url = auth.info.image
     end
   end
 
