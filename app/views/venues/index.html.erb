@@ -1,8 +1,13 @@
 <h4> Venues </h4>
 
 <% @venues.each do |venue| %>
-  <p> <%= venue.name %> | <%= link_to 'show', venue %></p> 
+  <p class="well"><%= link_to "#{venue.name}", venue %></p> 
 <% end %> 
 
 <%= link_to 'add venue', new_venue_path %>
 
+<!-- <a href="/venues/id">
+  <div>
+    <img
+  </div>
+</a> -->

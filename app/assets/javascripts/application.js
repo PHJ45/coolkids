@@ -16,3 +16,12 @@
 //= require_tree .
 
 //= require twitter/bootstrap
+
+$(document).ready(function(){
+  
+  // $("").click(function(){
+  //   $(this).hide();
+  // });
+
+
+});

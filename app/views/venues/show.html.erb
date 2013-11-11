@@ -1,9 +1,11 @@
-
-<h3><%= @venue.name.capitalize %></h3>
-
-    <%= link_to 'Venues', venues_path, :class => "btn" %>
-    <%= link_to 'Add Review', new_venue_review_path(@venue), :class => "btn" %>
-
+<div class="row">
+  <div class="pull-left">
+    <h3><%= @venue.name.capitalize %></h3>
+  </div>
+  <div class="pull-right">
+    <strong><%= link_to 'add review', new_venue_review_path(@venue)%></strong>
+  </div>
+</div>
 <% @venue.reviews.each do |review| %>
   <div class="well">
     <img src="<%= review.user.img_url %>" class="img-circle" >

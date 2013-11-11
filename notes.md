@@ -42,6 +42,9 @@ done
   #in initialize you will draw on the env
 
 
+  #check session or set session to last last till 
+
+
 
 
 
