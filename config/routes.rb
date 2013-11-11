@@ -9,5 +9,7 @@ Coolkids::Application.routes.draw do
     resources :reviews
   end
 
+  post '/venues/search_foursquare' => 'venues#search_foursquare'  
+
   root 'pages#home'
 end
