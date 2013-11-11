@@ -20,6 +20,7 @@ gem 'devise'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem 'omniauth-twitter'
 gem 'quimby'
+gem "figaro"
 
 #PRESTO
 group :test, :development do
