@@ -1,18 +1,11 @@
-
-<div class="row">
-  <div class="pull-left">
-    <h3><%= @venue.name.capitalize %></h3>
-  </div>
-  <div class="pull-right">
-    <strong><%= link_to 'add review', new_venue_review_path(@venue)%></strong>
-  </div>
-</div>
-
-
-<h3><%= @venue.name.capitalize %></h3>
-
-<%= link_to 'Add Review', new_venue_review_path(@venue)%>
-
+<p>
+  <h3>
+    <%= @venue.name.capitalize %>
+  </h3> 
+  <h5>
+    <%= link_to 'Add Review', new_venue_review_path(@venue)%>
+  </h5>
+</p>
 
 <% @venue.reviews.each do |review| %>
   <div class="well">
