@@ -20,12 +20,14 @@ class VenuesController < ApplicationController
   end 
 
   def search_foursquare
+    lat  = "40.6700" 
+    lng = "-73.9400"
     client_secret   = ENV["FOURSQUARE_CONSUMER_SECRET"]
     client_id       = ENV["FOURSQUARE_CONSUMER_KEY"]
     foursquare      = Foursquare::Base.new( client_id , client_secret)
 
     if params[:query]
-      @search_results = foursquare.venues.search(:query => params[:query], :ll => "40.6700 , -73.9400")
+      @search_results = foursquare.venues.search(:query => params[:query], :ll => "#{lat} , #{lng}")
       
       @venue = Venue.new
     else
@@ -36,7 +38,7 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,)
+    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,:lat,:long,:wifi)
   end
 
 end

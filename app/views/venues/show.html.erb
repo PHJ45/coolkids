@@ -1,6 +1,7 @@
+<%= render 'map' %>
 <p>
   <h3>
-    <%= @venue.name%>
+    <%= @venue.name %>
   </h3> 
   <h5>
     <%= link_to 'Add Review', new_venue_review_path(@venue)%>
@@ -12,14 +13,9 @@
     <img src="<%= review.user.img_url %>" class="img-circle" >
     <h4><%= review.user.name %></h4>
     <p><%= review.description %></p>
-    <p><strong>Stars </strong>  <%= review.stars %></p>
+    <p><strong>Stars: </strong>  <%= review.stars %></p>
   </div>
 <%end%>
-
-
-
-
-
 
 
 

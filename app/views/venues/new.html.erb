@@ -1,8 +1,13 @@
+
+
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
   <%= label_tag(:query, "Add New Spot:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
+
+<%= render 'map' %>
+
 <br>
 <div id="search_results" class="row">
   <% if @search_results %>
@@ -17,13 +22,18 @@
             <input type="hidden" name="venue[address]" value="<%= venue.location.address  %>">
             <input type="hidden" name="venue[city]" value="<%=venue.location['city']%>">
             <input type="hidden" name="venue[cross_street]" value="<%= venue.location['crossStreet']%>">
+            <input type="hidden" name="venue[lat]" value="<%= venue.location.lat  %>">
+            <input type="hidden" name="venue[lng]" value="<%= venue.location.lng  %>">
             <input type="hidden" name="venue[user_id]" value="<%= current_user.id%>">
+            
             <input type="submit" value="Select">
           <%end%>
         </div>
     <%end%>
   <%end%>
 </div>
+
+
 
 
 
