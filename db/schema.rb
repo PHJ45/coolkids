@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112152743) do
+ActiveRecord::Schema.define(version: 20131112181401) do
 
   create_table "reviews", force: true do |t|
     t.text    "description"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20131112152743) do
     t.string  "name"
     t.integer "user_id"
     t.integer "foursquare_id"
+    t.string  "address"
+    t.string  "city"
+    t.string  "cross_street"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id"

@@ -1,12 +1,12 @@
-<h3>
-  <%= link_to 'New Venue', new_venue_path %>
-</h3> 
-
 <% @venues.each do |venue| %>  
-  <div class="well">
-    <h4><%= link_to "#{venue.name}", venue %></h4>
-    <p>venue.location</p>
-  </div> 
+  <%= link_to venue do %>
+    <div class="well">
+      <h4><%=venue.name%></h4>
+      <p><%=venue.address%></p>
+      <p><%=venue.city%></p>
+      <p><%=venue.cross_street%></p>
+    </div> 
+  <% end %>
 <% end %> 
 
 

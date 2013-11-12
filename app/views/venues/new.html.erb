@@ -6,22 +6,24 @@
 <br>
 <div id="search_results" class="row">
   <% if @search_results %>
-    <% @search_results['places'].each do |place| %>
+    <% @search_results['places'].each do |venue| %>
         <div class="well span4 offset2">
-          <h4><%= place.name  %><br></h4>
-          <h5><%= place.location.address  %> <%=place.location['city']%></h5>
-          <p>Cross Streets: <%= place.location['crossStreet']%></p>
-          <input type="hidden" name="name" value="<%= place.name %>">
-          <input type="hidden" name="foursquare_id" value="<%= place.id%>">
+          <h4><%= venue.name  %><br></h4>
+          <h5><%= venue.location.address  %> <%=venue.location['city']%></h5>
+          <p>Cross Streets: <%= venue.location['crossStreet']%></p>
+          <%=form_tag "/venues", method: "post" do %>
+            <input type="hidden" name="venue[name]" value="<%= venue.name %>">
+            <input type="hidden" name="venue[foursquare_id]" value="<%= venue.id%>">
+            <input type="hidden" name="venue[address]" value="<%= venue.location.address  %>">
+            <input type="hidden" name="venue[city]" value="<%=venue.location['city']%>">
+            <input type="hidden" name="venue[cross_street]" value="<%= venue.location['crossStreet']%>">
+            <input type="hidden" name="venue[user_id]" value="<%= current_user.id%>">
+            <input type="submit" value="Select">
+          <%end%>
         </div>
     <%end%>
   <%end%>
 </div>
-
-
-
-
-
 
 
 
