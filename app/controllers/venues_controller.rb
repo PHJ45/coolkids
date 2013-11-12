@@ -25,7 +25,7 @@ class VenuesController < ApplicationController
 
     if params[:query]
       @search_results = foursquare.venues.search(:query => params[:query], :ll => "40.6700 , -73.9400")
-      #raise @search_results.to_yaml
+      
       @venue = Venue.new
     else
       flash[:notice] = "Try again"
@@ -35,7 +35,7 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:name , :user_id)
+    params.require(:venue).permit(:name,:user_id)
   end
 
 end

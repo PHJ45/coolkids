@@ -1,22 +1,13 @@
-<p>
-  <h3>
-    Places to Code
-  </h3> 
-  <h5>
-    <%= link_to 'New Spot', new_venue_path %>
-  </h5>
-</p>
+<h3>
+  <%= link_to 'New Venue', new_venue_path %>
+</h3> 
 
-<% @venues.each do |venue| %>
-  
-  <p class="well"><%= link_to "#{venue.name}", venue %></p> 
-
+<% @venues.each do |venue| %>  
+  <div class="well">
+    <h4><%= link_to "#{venue.name}", venue %></h4>
+    <p>venue.location</p>
+  </div> 
 <% end %> 
 
 
 
-<!-- <a href="/venues/id">
-  <div>
-    <img
-  </div>
-</a> -->

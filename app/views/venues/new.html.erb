@@ -1,29 +1,52 @@
-<h1>New Venue</h1>
+    <script>  
+        jQuery(window).ready(function(){  
+            jQuery("#btnInit").click(initiate_geolocation);  
+        });  
+        function initiate_geolocation() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query);  
+        }  
+        function handle_geolocation_query(position){  
+            alert('Lat: ' + position.coords.latitude + ' ' +  
+                  'Lon: ' + position.coords.longitude);  
+        }  
+    </script> 
 
-<%= link_to 'Back', venues_path %>
 
-<%= form_tag("/venues/search_foursquare", method: "post") do %>
-  <%= label_tag(:query, "Search for:") %>
+<%= form_tag("/venues/search_foursquare", method: "POST") do %>
+  <%= label_tag(:query, "Add New Spot:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
-
 <br>
-<%= render 'form' %>
-<br>
-
 <div id="search_results" class="row">
   <% if @search_results %>
     <% @search_results['places'].each do |place| %>
-      <div class="well">
-        <p><%= place.name %></p>
-        <p><%= place.location['address']%></p>
-        <p><%#= place.contact['phone'] %></p>
-      </div>
+        <div class="well span4 offset2">
+          <h4><%= place.name  %><br></h4>
+          <h5><%= place.location.address  %> <%=place.location['city']%></h5>
+          <p>Cross Streets: <%= place.location['crossStreet']%></p>
+          <input type="hidden" name="name" value="<%= place.name %>">
+          <input type="hidden" name="foursquare_id" value="<%= place.id%>">
+        </div>
     <%end%>
   <%end%>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
