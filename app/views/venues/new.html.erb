@@ -1,17 +1,3 @@
-    <script>  
-        jQuery(window).ready(function(){  
-            jQuery("#btnInit").click(initiate_geolocation);  
-        });  
-        function initiate_geolocation() {  
-            navigator.geolocation.getCurrentPosition(handle_geolocation_query);  
-        }  
-        function handle_geolocation_query(position){  
-            alert('Lat: ' + position.coords.latitude + ' ' +  
-                  'Lon: ' + position.coords.longitude);  
-        }  
-    </script> 
-
-
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
   <%= label_tag(:query, "Add New Spot:") %>
   <%= text_field_tag(:query) %>
