@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jansonp/Development/projects/coolkids/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jansonp/Development/projects/coolkids/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/jansonp/Development/projects/coolkids/app/models/relationship.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1384313753
+  }
+}

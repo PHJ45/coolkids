@@ -24,7 +24,7 @@
           <% if user_signed_in? %>
             <li> <%= link_to "Post", new_venue_path %></li>
             <li> <%= link_to "News", venues_path %> </li>
-            <li> <%= link_to "Profile", venues_path %> </li>
+            <li><a href="/profile">Profile</a></li>
             <li> <%#= link_to "Logout", destroy_user_session_path, :method => :delete %> </li>
             <!-- <li><img src="<%#=current_user.img_url%>"></li> -->
           <%else%>

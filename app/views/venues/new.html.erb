@@ -1,7 +1,7 @@
 
 
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
-  <%= label_tag(:query, "Add New Spot:") %>
+  <%= label_tag(:query, "share a spot: ") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>

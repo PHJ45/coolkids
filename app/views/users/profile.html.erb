@@ -1,0 +1,21 @@
+
+<img src="<%= current_user.img_url %>">
+<h3><%= current_user.name %></h3>
+<p><%= current_user.twitter_handle %></p>
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<p style="color:green;">Gems</p>
+
+<h4>Reviews</h4>
+  <% current_user.reviews.each do |review| %>
+  <div class="well">
+    <p><%= review.venue.name %></p>
+    <p><%= review.stars %></p>
+  </div>
+  <%end%>
+
+<h4>Venues</h4>
+<% current_user.reviews.each do |review| %>
+<div class="well">
+  <p><%= review.venue.name %></p>
+</div>
+<%end%>
