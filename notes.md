@@ -30,21 +30,27 @@ devise
 
   created_by :user_id
 
-#authentication
+  #authentication
 
-
-done
- #devise
- #ominauth
-
-
- #new class FoursquareClient
+#Search - new class FoursquareClient
   #in initialize you will draw on the env
 
+#FEATURES TO ADD:
+  Following
+  Trade Gems
+  Recomendation - cosine similarity 
+  HTML5 GeoLocation
+  
+#Thoughts?
+  Yelp API 
+  Login with Instagram?
 
-  #check session or set session to last last till 
+#Wish List
+  Instagram Photos?
 
-
+Done
+ #devise
+ #ominauth
 
 
 

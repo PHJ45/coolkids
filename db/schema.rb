@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20131113010347) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "reviews", force: true do |t|
-    t.text    "description"
-    t.integer "venue_id"
-    t.integer "user_id"
-    t.integer "stars"
+    t.text     "description"
+    t.integer  "venue_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "stars"
   end
 
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
@@ -58,15 +60,17 @@ ActiveRecord::Schema.define(version: 20131113010347) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "venues", force: true do |t|
-    t.string  "name"
-    t.integer "user_id"
-    t.integer "foursquare_id"
-    t.string  "address"
-    t.string  "city"
-    t.string  "cross_street"
-    t.boolean "wifi"
-    t.string  "lat"
-    t.string  "lng"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "foursquare_id"
+    t.string   "address"
+    t.string   "city"
+    t.string   "cross_street"
+    t.boolean  "wifi"
+    t.string   "lat"
+    t.string   "lng"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id"

@@ -21,6 +21,8 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 gem 'omniauth-twitter'
 gem 'quimby'
 gem "figaro"
+gem 'rails_12factor', group: :production
+#gem 'pg'
 
 #PRESTO
 group :test, :development do
