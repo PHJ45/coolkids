@@ -1,7 +1,6 @@
-
 <%= render 'map' %>
 
-<% @venues.each do |venue| %>  
+<% @venues.reverse_each do |venue| %>  
   <%= link_to venue do %>
     <div class="well">
       <h4><%=venue.name%></h4>

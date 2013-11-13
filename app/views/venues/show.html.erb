@@ -1,12 +1,10 @@
 <%= render 'map' %>
-<p>
-  <h3>
-    <%= @venue.name %>
-  </h3> 
-  <h5>
-    <%= link_to 'Add Review', new_venue_review_path(@venue)%>
-  </h5>
-</p>
+<div class="well">
+  <h3><%= @venue.name %></h3> 
+  <h4><%= @venue.address %> <%= @venue.city %></h4>
+  <small><%= @venue.cross_street %></small> 
+  <p><%= link_to 'Comment', new_venue_review_path(@venue)%></p>
+</div>
 
 <% @venue.reviews.each do |review| %>
   <div class="well">
@@ -16,6 +14,7 @@
     <p><strong>Stars: </strong>  <%= review.stars %></p>
   </div>
 <%end%>
+
 
 
 

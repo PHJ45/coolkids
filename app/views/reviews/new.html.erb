@@ -1,6 +1,10 @@
 <%= render 'venues/map' %>
 
-<h4>Write a Review for : <%=@review.venue.name.capitalize%></h4>
+<div class ="well">
+  <h3><%=@review.venue.name%></h3>
+  <h4><%=@review.venue.address%> <%=@review.venue.city%></h4>
+  <small><%=@review.venue.cross_street%></small> 
+</div>
 
 <%= render 'form' %>
 

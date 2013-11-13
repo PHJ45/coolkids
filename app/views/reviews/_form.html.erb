@@ -1,23 +1,22 @@
-
-
-
 <%= form_for(@review) do |f| %>
-  <div class="field">
+  <div class="field well form-search">
     <%= f.label :description %>
     <br>
-    <%= f.text_field :description, :size=>"25", placeholder: "What do you think? ", :maxlength => "140" %>
-    <br>
+    <%= f.text_field :description, :size=>"25", placeholder: "Thoughts? ", :maxlength => "140" %>
     <br>
     <%= f.label :stars %>
-    <%= f.select :stars, (0..3) %>
+    <%= f.select :stars, (0..5) %>
+    <br>
     <%= f.hidden_field :user_id  %>
     <%= f.hidden_field :venue_id %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <%end%>
+
+
 
 
 
