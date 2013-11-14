@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113010347) do
+ActiveRecord::Schema.define(version: 20131114015029) do
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20131113010347) do
 
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
   add_index "reviews", ["venue_id"], name: "index_reviews_on_venue_id"
+
+  create_table "shares", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.integer  "party_type"
+    t.string   "type"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -71,6 +81,12 @@ ActiveRecord::Schema.define(version: 20131113010347) do
     t.boolean  "wifi"
     t.string   "lat"
     t.string   "lng"
+    t.string   "close_time"
+    t.integer  "zip"
+    t.string   "phone"
+    t.string   "url"
+    t.integer  "creator_user_id"
+    t.integer  "reviewer_user_id"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id"

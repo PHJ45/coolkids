@@ -1,0 +1,26 @@
+
+hash = JSON.parse(RestClient.get('https://data.cityofnewyork.us/api/views/4u6b-frhh/rows.json'))
+data_array = hash["data"]
+
+data_array.each do |data_array|
+  venue = Venue.new
+  venue.name    =  data_array[9]
+  venue.address = data_array[10]
+  venue.city    = data_array[11]
+  venue.url     = data_array[12]
+  venue.phone   = data_array[13]
+  venue.wifi    = data_array[14]
+  venue.zip     = data_array[15]
+
+  s = Geocoder.search(venue.zip)
+  venue.lat = s[0].latitude
+  venue.lng = s[0].longitude
+
+  venue.save
+end 
+
+
+
+
+
+

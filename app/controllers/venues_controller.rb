@@ -15,6 +15,7 @@ class VenuesController < ApplicationController
   def create
     #foursquare.find_by_id(para,s[:id])
     @venue = Venue.new(venue_params)
+    @venue.creator_user_id = current_user.id
     @venue.save
     redirect_to venues_path
   end 
@@ -38,7 +39,7 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,:lat,:long,:wifi)
+    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,:lat,:lng,:wifi)
   end
 
 end

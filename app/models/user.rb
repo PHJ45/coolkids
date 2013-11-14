@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
   
   has_many :reviews, :dependent => :destroy
-  has_many :venues, through: :reviews
+  has_many :reviewed_venues, :class_name => "Venue", :foreign_key => "reviewer_user_id", through: :reviews
+  has_many :shares
+  has_many :venues, :through => :shares
+  has_many :created_venues, :class_name => "Venue", :foreign_key => "creator_user_id"
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

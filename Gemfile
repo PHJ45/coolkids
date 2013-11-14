@@ -15,6 +15,8 @@ group :doc do
 end
 
 #PHJ
+gem 'rest-client'
+gem 'geocoder'
 gem 'unicorn'
 gem 'devise'
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'

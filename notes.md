@@ -1,4 +1,4 @@
-#Views
+#Views 
   #login(devise)
     #twitter(ominauth) 
   #list-view
@@ -11,10 +11,7 @@
     #see comments
     #add review
 
-gem(ominauth)
-gem(foursqaure)
-devise
-
+#ASSOCIATIONS
 #user
   has_many :reviews
   has_many :venues through :reviews 
@@ -27,31 +24,46 @@ devise
 #venue
   has_many :users through :reviews
   has_many :reviews
-
-  created_by :user_id
-
-  #authentication
-
-#Search - new class FoursquareClient
-  #in initialize you will draw on the env
+  belongs_to :created_by :user_id
 
 #FEATURES TO ADD:
-  Following
-  Trade Gems
-  Recomendation - cosine similarity 
-  HTML5 GeoLocation
+
+  #venue List
+    #upvoting
+    # 
+
+  HTML5 GeoLocation (or IP GeoCoding)
+  Coffee Near Me
   
-#Thoughts?
-  Yelp API 
-  Login with Instagram?
+  Correlate Yelp, Foursquare, and NYC Open Data for a Definitive List
 
-#Wish List
-  Instagram Photos?
+  GeoCoder location based queries in the data
 
-Done
- #devise
- #ominauth
+  Following
+  Authorizations
+  Ability to trade "gems"
+  Recomendation - cosine similarity 
+  
+#WISH LIST
+  JQUERY Mobile Templating. 
+  Yelp API - Better Data.
+  Tweet when new venue added. 
+  Login with Instagram.
+  
+#GEMS
+  gem(ominauth)
+  gem(quimby)
+  gem(unicorn)
+  gem(figaro)
 
+#Rake Task
+Call Foursqaure
+Call Yelp 
+Call NYC Open Date
+normalize
+insert in venues table
+
+add venue not in database
 
 
 

@@ -1,0 +1,12 @@
+
+<h3>Propose your Trade</h3>
+
+<h4>CounterParty: <%= %></h4>
+
+<% @user.venues.each do |venue|  %>
+  <p>Traded: <%=venue.name%> | Select</p>
+<% end %>
+
+<% @user.created_venues.each do |venue|  %>
+  <p>Created: <%=venue.name%> | Select</p>
+<% end %>

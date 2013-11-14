@@ -5,6 +5,11 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <%- unless @lat_lng %>
+      <script>
+        getGeoLocation();
+      </script>
+    <%- end %>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -15,14 +20,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=<%= current_user ? venues_path : "#"%>><strong>Cool Kids</strong></a>
+        <a class="navbar-brand" href=<%= current_user ? venues_path : "#"%>><%#= image_tag "mega.gif" %><strong>Cool Kids</strong></a>
       </div>
 
   <!--Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
           <% if user_signed_in? %>
-            <li> <%= link_to "New Post", new_venue_path %></li>
+            <li> <%= link_to "Share", users_path %> </li>
+            <li> <%= link_to "Add Card", new_venue_path %></li>
             <li> <%= link_to "News", venues_path %> </li>
             <li><a href="/profile">Profile</a></li>
             <li> <%#= link_to "Logout", destroy_user_session_path, :method => :delete %> </li>
@@ -41,6 +47,5 @@
     <div class="container">
       <%= yield %>
     </div>
-
   </body>
 </html>

@@ -1,12 +1,12 @@
-
-
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
-  <%= label_tag(:query, "share a spot: ") %>
+  <%= label_tag(:query, "Add a card ") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
 
 <%= render 'map' %>
+
+<p><%= @lat_lng %></p>
 
 <br>
 <div id="search_results" class="row">
