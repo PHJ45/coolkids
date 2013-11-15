@@ -1,26 +1,23 @@
-
 <img src="<%= current_user.img_url %>">
-<h3><%= current_user.name %></h3> 
-<p><%= current_user.twitter_handle %></p>
+<h3><%= current_user.name %></h3>
+Cards: <span class="badge"><%= current_user.created_venues.count %></span><br>
+<strong>Rank:</strong>
+<!-- <span>Joined: <%=time_ago_in_words(current_user.created_at)%> ago</span> -->
+Trades:  <span class="badge"><%= current_user.shares.count %></span> 
+<br>
+<br>
 
 
-<p style="color:green;">Gems</p>
-
-
-<h4>Reviews</h4>
+<% current_user.created_venues.each do |venue| %>  
 <div class="well">
-  <% current_user.reviews.each do |review| %>  
-  <p><%= review.venue.name %></p>
-  <p><%= review.stars %></p>
+  <p><%= venue.name %></p>
+</div>
 <%end%>
-</div>
 
-<div>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-minus-sign">
     <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-</div>
-<!-- <h4>Venues</h4>
-<% current_user.reviews.each do |review| %>
-<div class="well">
-  <p><%= review.venue.name %></p>
-</div>
-<%end%> -->
+  </span>
+</button>
+

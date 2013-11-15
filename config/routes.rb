@@ -15,7 +15,9 @@ Coolkids::Application.routes.draw do
 
   get '/profile' => 'users#profile' 
 
-  get '/share' => 'shares#new' 
+  post '/shares' => 'shares#create' 
+
+  get "/shares" => 'shares#new'
 
   root 'pages#home'
 end

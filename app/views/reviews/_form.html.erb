@@ -4,6 +4,7 @@
     <br>
     <%= f.text_field :description, :size=>"25", placeholder: "Thoughts? ", :maxlength => "140" %>
     <br>
+    <br>
     <%= f.label :stars %>
     <%= f.select :stars, (0..5) %>
     <br>
@@ -11,7 +12,7 @@
     <%= f.hidden_field :venue_id %>
     <br>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Comment" %>
     </div>
   </div>
 <%end%>

@@ -1,12 +1,25 @@
 
-<h3>Propose your Trade</h3>
+<h5>Trade with</h5>
+<div class = "well">
+  <h3><%= @receiver.name %></h3>
+  Cards:  <span class="badge"><%= @receiver.created_venues.count %></span> 
+  <h6>Member Since: <%=time_ago_in_words(@receiver.created_at)%> ago</h6>
+</div>
 
-<h4>CounterParty: <%= %></h4>
-
-<% @user.venues.each do |venue|  %>
-  <p>Traded: <%=venue.name%> | Select</p>
-<% end %>
-
+<h5>Select on of your Cards to trade</h5>
 <% @user.created_venues.each do |venue|  %>
-  <p>Created: <%=venue.name%> | Select</p>
+  
+<%= form_tag(shares_path, method: "post") do %>
+    <div class="well well-sm">
+      <h4><%=venue.name%> </h4>
+      <input type="hidden" name="share[initiator]"  value="<%= current_user.id %>">
+      <input type="hidden" name="share[reciever_id]" value="<%= @receiver.id%>">
+      <input type="hidden" name="share[cards_offered]" value="<%= venue.id%>">
+      <input name="share[gift]" value="true" type="checkbox"> Gift?
+      <br>
+      <br>
+      <input type="submit" value="Select">
+    </div>
+  <% end %>
+
 <% end %>

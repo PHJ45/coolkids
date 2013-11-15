@@ -17,10 +17,16 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
     @venue.creator_user_id = current_user.id
     @venue.save
+    
     redirect_to venues_path
   end 
 
   def search_foursquare
+    # ip = request.remote_ip
+    # s = Geocoder.search(ip)
+    # lat = s[0].latitude
+    # lng = s[0].longitude
+    
     lat  = "40.6700" 
     lng = "-73.9400"
     client_secret   = ENV["FOURSQUARE_CONSUMER_SECRET"]

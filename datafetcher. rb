@@ -12,6 +12,7 @@ data_array.each do |data_array|
   venue.wifi    = data_array[14]
   venue.zip     = data_array[15]
 
+  # request.remote_ip
   s = Geocoder.search(venue.zip)
   venue.lat = s[0].latitude
   venue.lng = s[0].longitude

@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 20131114015029) do
 
   create_table "shares", force: true do |t|
     t.integer  "user_id"
-    t.integer  "venue_id"
-    t.integer  "party_type"
-    t.string   "type"
-    t.string   "state"
+    t.integer  "reciever_id"
+    t.integer  "cards_offered"
+    t.integer  "cards_returned"
+    t.boolean  "gift"
+    t.boolean  "rejected"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,8 +80,8 @@ ActiveRecord::Schema.define(version: 20131114015029) do
     t.string   "city"
     t.string   "cross_street"
     t.boolean  "wifi"
-    t.string   "lat"
-    t.string   "lng"
+    t.float    "lat"
+    t.float    "lng"
     t.string   "close_time"
     t.integer  "zip"
     t.string   "phone"

@@ -1,18 +1,20 @@
 <h2>Users</h2>
-  <% @users.each do |user| %>
-  <a href="<%= profile_path(user)%>">
-    <div class="row">
-      <div class="well">
-        <a href="<%= profile_path(user)%>">
-        <h3><%= user.name %></h3>
-        Cards to Share:  <span class="badge"><%= user.venues.count + user.created_venues.count %></span> 
+
+<% @users.each do |user| %>
+<%= form_tag("/shares", method: "get") do %>
+      <div class="row">
+        <div class="well">
+          <h3><%= user.name %></h3>
+          Cards to Share:  <span class="badge"><%= user.created_venues.count %></span>
+          Trades:  <span class="badge"><%= user.shares.count %></span>  
         <h6>Member Since: <%=time_ago_in_words(user.created_at)%></h6>
+        <input type="hidden" name="reciever_id" value="<%= user.id %>">
+        <input type="submit" value="Trade with <%= user.name %>">
       </div>
-    
-    <a href="/share" style="float:right" class="btn">
-      <button type="button" class="btn btn-default btn-lg">
-       <span class="glyphicon glyphicon-star"></span> Trade with <%= user.name %>
-      </button>
-    </a>
     </div>
   <% end %>
+<% end %>
+
+  
+
+

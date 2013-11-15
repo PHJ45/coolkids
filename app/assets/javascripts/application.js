@@ -17,11 +17,4 @@
 
 //= require twitter/bootstrap
 
-$(document).ready(function(){
-  
-  // $("").click(function(){
-  //   $(this).hide();
-  // });
-
-});
 
