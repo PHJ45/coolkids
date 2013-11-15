@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114015029) do
+ActiveRecord::Schema.define(version: 20131115165417) do
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20131114015029) do
     t.string   "url"
     t.integer  "creator_user_id"
     t.integer  "reviewer_user_id"
+    t.string   "img"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id"
