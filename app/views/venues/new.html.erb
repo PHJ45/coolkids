@@ -24,8 +24,7 @@
             <input type="hidden" name="venue[cross_street]" value="<%= venue.location['crossStreet']%>">
             <input type="hidden" name="venue[lat]" value="<%= venue.location.lat  %>">
             <input type="hidden" name="venue[lng]" value="<%= venue.location.lng  %>">
-            <input type="hidden" name="venue[user_id]" value="<%= current_user.id%>">
-            
+            <input type="hidden" name="venue[img]" value="<%= current_user.id %>">
             <input type="submit" value="Select">
           <%end%>
         </div>

@@ -27,29 +27,16 @@
   belongs_to :created_by :user_id
 
 #FEATURES TO ADD:
-
-  #venue List
-    #upvoting
-    # 
-
   HTML5 GeoLocation (or IP GeoCoding)
-  Coffee Near Me
+
   
   Correlate Yelp, Foursquare, and NYC Open Data for a Definitive List
 
   GeoCoder location based queries in the data
 
-  Following
-  Authorizations
-  Ability to trade "gems"
-  Recomendation - cosine similarity 
-  
 #WISH LIST
   JQUERY Mobile Templating. 
-  Yelp API - Better Data.
-  Tweet when new venue added. 
-  Login with Instagram.
-  
+
 #GEMS
   gem(ominauth)
   gem(quimby)
@@ -58,13 +45,24 @@
 
 #Rake Task
 Call Foursqaure
-Call Yelp 
+Call Yelp
 Call NYC Open Date
 normalize
 insert in venues table
 
-add venue not in database
+#TODOS
+  #Share model build out
+  #Add Venue to your "wallet"
+  #Accept shares/reject shares
+  #not allow nil search 
 
+user_venue join table
+
+update would be modifying the accepted value
+
+shares table = accpeted t.stamps
+
+whenever you have a boolena consider making it a time.stamp
 
 
 

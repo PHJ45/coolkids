@@ -2,6 +2,7 @@ class VenuesController < ApplicationController
 
   def index #GET /venues
     @venues = Venue.all
+    @visible_venues = Venue.limit(current_user.created_venues.count).order('id desc')
   end
 
   def show
@@ -35,7 +36,6 @@ class VenuesController < ApplicationController
 
     if params[:query]
       @search_results = foursquare.venues.search(:query => params[:query], :ll => "#{lat} , #{lng}")
-      
       @venue = Venue.new
     else
       flash[:notice] = "Try again"
@@ -45,7 +45,7 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,:lat,:lng,:wifi)
+    params.require(:venue).permit(:name,:user_id,:foursquare_id,:address,:city,:cross_street,:lat,:lng,:wifi,:close_time,:zip,:phone,:url,:img)
   end
 
 end

@@ -2,8 +2,6 @@ Coolkids::Application.routes.draw do
   devise_for  :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
   
   resources :users
-
-  resources :users
   
   resources :reviews
   
@@ -18,6 +16,8 @@ Coolkids::Application.routes.draw do
   post '/shares' => 'shares#create' 
 
   get "/shares" => 'shares#new'
+
+  get "/news" => 'shares#index'
 
   root 'pages#home'
 end

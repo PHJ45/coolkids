@@ -38,11 +38,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
           <% if user_signed_in? %>
-            <li> <%= link_to "News", venues_path %> </li>
-            <li> <%= link_to "Share", users_path %> </li>
+            <li><a href="/news">News</a></li>
+            <!-- <li><%#= link_to "Trade", users_path %> </li> -->
+            <li><a href="/venues">Venues</a></li>
             <li><a href="/profile">Profile</a></li>
-            <li> <%= link_to "Add Card", new_venue_path %></li>
-            <li> <%#= link_to "Logout", destroy_user_session_path, :method => :delete %> </li>
             <!-- <li><img src="<%#=current_user.img_url%>"></li> -->
           <%else%>
             <li><a href="#">About</a></li>

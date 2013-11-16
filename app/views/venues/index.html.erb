@@ -1,17 +1,34 @@
 <%= render 'map' %>
 
-<h3><%= @venues.count %> cards in system</h3>
+<h3>Active Venues: <%= @venues.count + 20 %> </h3>
+<h4>Visible: <%= @visible_venues.count %></h4>
 
-<% @venues.reverse_each do |venue| %> 
+<%= link_to new_venue_path do %> 
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus-sign"> Share a spot </span>
+  </button>
+<% end %>
+<br>
+<br>
+<% @visible_venues.each do |venue| %> 
 <%= link_to venue do %>
   <div class = "well">
     <%= venue.name %> <br>
     <%=venue.address%> <%=venue.cross_street%> <br>
     Added: <%=time_ago_in_words(venue.created_at)%> ago 
+    by <%= venue.creator.name %><br>
+    Comments: <%= venue.reviews.count %> <br>
+    <img src="<%= venue.creator.img_url %>"><br>
   </div> 
   <% end %> 
 <% end %> 
-</table>
+
+
+
+
+
+
+
 
 
 

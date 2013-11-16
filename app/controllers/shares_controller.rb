@@ -1,5 +1,9 @@
 class SharesController < ApplicationController
-
+  
+  def index
+    @shares = Share.all
+  end
+  
   def new
     @user = current_user
     @receiver = User.find_by(:id => params[:reciever_id])
@@ -14,8 +18,9 @@ class SharesController < ApplicationController
     share.cards_returned = nil
     share.gift           = params[:share][:gift] 
     share.rejected       = false
+    #share.reciever       = User.find_by(:id => share.reciever_id).name
     share.save
-    redirect_to venues_path
+    redirect_to '/news'
   end
 
   def accept

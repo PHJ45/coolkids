@@ -1,1 +1,31 @@
-share.html.erb
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    There has been <%=@shares.count%> trades
+  </div>
+</div>
+
+<br>
+<% @shares.reverse_each do |share| %> 
+
+<div class = "row well">
+    <div style="float:left">
+      <div>
+        <img src="<%=share.user.img_url%>">
+      </div>
+      <div>
+        <%= share.user.name %> 
+      </div>
+  </div>
+
+  <div style="float:right">
+    <div>
+      <img src="<%=share.reciever.img_url%>">
+    </div>
+    <div>
+      <%= share.reciever.name %>
+    </div>
+  </div>
+  <%#=time_ago_in_words(share.created_at)%> 
+</div>
+<% end %>
+
