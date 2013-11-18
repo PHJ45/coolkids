@@ -37,6 +37,7 @@ class VenuesController < ApplicationController
     if params[:query]
       @search_results = foursquare.venues.search(:query => params[:query], :ll => "#{lat} , #{lng}")
       @venue = Venue.new
+      binding.pry
     else
       flash[:notice] = "Try again"
     end

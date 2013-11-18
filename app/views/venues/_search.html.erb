@@ -1,5 +1,13 @@
+
+<%= form_tag("/venues/search_foursquare", method: "POST") do %>
+    <%= label_tag(:query, "")%>
+    <%= text_field_tag(:query) %>
+    <button class="btn" type="submit" style="background-color:#34495e;color:white">
+      Search
+    </button>
+  <% end %>
 <br>
-<div id="search_results" class="card">
+<div id="search_results" class="row">
   <% if @search_results %>
     <% @search_results['places'].each do |venue| %>
         <div class="well span4 offset2">
@@ -15,27 +23,9 @@
             <input type="hidden" name="venue[lat]" value="<%= venue.location.lat  %>">
             <input type="hidden" name="venue[lng]" value="<%= venue.location.lng  %>">
             <input type="hidden" name="venue[img]" value="<%= current_user.id %>">
-            <button class="btn" type="submit" style="background-color:#34495e;color:white">
-              Select
-            </button>
+            <input type="submit" value="Select">
           <%end%>
         </div>
     <%end%>
   <%end%>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

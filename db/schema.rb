@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116060643) do
+ActiveRecord::Schema.define(version: 20131117190554) do
 
   create_table "reviews", force: true do |t|
     t.text     "description"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20131116060643) do
     t.integer  "reviewer_user_id"
     t.string   "img"
     t.integer  "overall_stars"
+    t.string   "description"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id"

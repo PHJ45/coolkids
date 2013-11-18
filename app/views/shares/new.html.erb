@@ -1,8 +1,10 @@
 
 <h5>Trade with</h5>
-<div class = "well">
+<div>
+  <img src="<%=@receiver.img_url%>"> 
   <h3><%= @receiver.name %></h3>
-  Cards:  <span class="badge"><%= @receiver.created_venues.count %></span> 
+  Cards:  <span class="badge"><%= @receiver.created_venues.count %></span>
+
   <h6>Member Since: <%=time_ago_in_words(@receiver.created_at)%> ago</h6>
 </div>
 
@@ -15,9 +17,7 @@
       <input type="hidden" name="share[initiator]"  value="<%= current_user.id %>">
       <input type="hidden" name="share[reciever_id]" value="<%= @receiver.id%>">
       <input type="hidden" name="share[cards_offered]" value="<%= venue.id%>">
-      <input name="share[gift]" value="true" type="checkbox"> Gift?
-      <br>
-      <br>
+     <!--  <input name="share[gift]" value="true" type="checkbox"> Gift? -->
       <input type="submit" value="Select">
     </div>
   <% end %>

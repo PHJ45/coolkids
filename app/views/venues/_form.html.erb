@@ -4,6 +4,7 @@
   <div class="field">
     <%= f.label :name%><br>
     <%= f.text_field :name %>
+    <%= f.options_for_select([['Code', 1], ['Eat', 2], ['Drink', 3],['Shop', 4]) %>
   </div>
   <br>
   <div class="actions">

@@ -12,4 +12,21 @@
  *= require_tree .
  */
 
+
+
  @import "twitter/bootstrap";
+
+body{
+  background-color: #ecf0f1;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+background-color: #34495e;
+}
+
+.btn{
+  background-color:#34495e;
+  color:white;
+}
+
+

@@ -1,27 +1,46 @@
-<%= render 'map' %>
 
-<h3>Active Venues: <%= @venues.count + 20 %> </h3>
-<h4>Visible: <%= @visible_venues.count %></h4>
+<%= render 'venues/search' %>
 
-<%= link_to new_venue_path do %> 
-  <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-plus-sign"> Share a spot </span>
-  </button>
-<% end %>
-<br>
-<br>
-<% @visible_venues.each do |venue| %> 
-<%= link_to venue do %>
-  <div class = "well">
-    <%= venue.name %> <br>
-    <%=venue.address%> <%=venue.cross_street%> <br>
-    Added: <%=time_ago_in_words(venue.created_at)%> ago 
-    by <%= venue.creator.name %><br>
-    Comments: <%= venue.reviews.count %> <br>
-    <img src="<%= venue.creator.img_url %>"><br>
-  </div> 
-  <% end %> 
+<% @venues.reverse.each do |venue| %> 
+<div class="card">
+   <div class="card-heading image">
+    <img src="<%= venue.creator.img_url %>">
+    <div class="card-heading-header">
+      <h3><%= venue.name %></h3>
+        <span>Added by <%= venue.creator.twitter_handle %></span><br>
+        <span><%= time_ago_in_words(venue.created_at)%> ago</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Address: </strong><%=venue.address%>, <%=venue.city%>  <br>
+      <strong>Cross Streets: </strong><%=venue.cross_street%> <br>
+
+      </p>
+    </div>
+    <div class="card-media">
+      <a class="card-media-container" href="#" >
+        <img src="http://placehold.it/300x200" alt="media"/>
+      </a>
+    </div>
+   
+  <div class="card-comments">
+    <%=venue.reviews.count%> comments 
+  </div>
+  </div>
+
 <% end %> 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

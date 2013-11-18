@@ -1,31 +1,21 @@
-<div class="row">
-  <div class="col-xs-6 col-sm-4">
-    There has been <%=@shares.count%> trades
-  </div>
-</div>
+There has been <%=@shares.count%> trades
 
-<br>
 <% @shares.reverse_each do |share| %> 
-
-<div class = "row well">
-    <div style="float:left">
-      <div>
-        <img src="<%=share.user.img_url%>">
-      </div>
-      <div>
-        <%= share.user.name %> 
-      </div>
+<div class="card">
+  <h3 class="card-heading simple">New Trade</h3>
+  <div class="card-body">
+    <img src="<%=share.user.img_url%>">
+    <%= share.user.twitter_handle %> 
+    <img src="<%=share.reciever.img_url%>">
+    <%= share.reciever.twitter_handle  %>
   </div>
-
-  <div style="float:right">
-    <div>
-      <img src="<%=share.reciever.img_url%>">
-    </div>
-    <div>
-      <%= share.reciever.name %>
-    </div>
-  </div>
-  <%#=time_ago_in_words(share.created_at)%> 
 </div>
 <% end %>
+
+
+
+
+
+
+
 
