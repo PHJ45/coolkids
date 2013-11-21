@@ -28,10 +28,7 @@
 
 #FEATURES TO ADD:
   HTML5 GeoLocation (or IP GeoCoding)
-
-  
   Correlate Yelp, Foursquare, and NYC Open Data for a Definitive List
-
   GeoCoder location based queries in the data
 
 #WISH LIST
@@ -63,6 +60,10 @@ update would be modifying the accepted value
 shares table = accpeted t.stamps
 
 whenever you have a boolena consider making it a time.stamp
+
+Get Images - https://api.foursquare.com/v2/venues/VENUE_ID/photos
+
+Text message you when new venue added?
 
 
 

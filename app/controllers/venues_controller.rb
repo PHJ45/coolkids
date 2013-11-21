@@ -14,8 +14,8 @@ class VenuesController < ApplicationController
   end
 
   def create
-    #foursquare.find_by_id(para,s[:id])
     @venue = Venue.new(venue_params)
+    #https://api.foursquare.com/v2/venues/VENUE_ID/photos
     @venue.creator_user_id = current_user.id
     @venue.save
     
@@ -28,8 +28,8 @@ class VenuesController < ApplicationController
     # lat = s[0].latitude
     # lng = s[0].longitude
     
-    lat  = "40.6700" 
-    lng = "-73.9400"
+    lat  = params[:lat] #"40.6700" 
+    lng =  params[:lng] #"-73.9400"
     client_secret   = ENV["FOURSQUARE_CONSUMER_SECRET"]
     client_id       = ENV["FOURSQUARE_CONSUMER_KEY"]
     foursquare      = Foursquare::Base.new( client_id , client_secret)
@@ -37,7 +37,6 @@ class VenuesController < ApplicationController
     if params[:query]
       @search_results = foursquare.venues.search(:query => params[:query], :ll => "#{lat} , #{lng}")
       @venue = Venue.new
-      binding.pry
     else
       flash[:notice] = "Try again"
     end

@@ -1,31 +1,60 @@
+<script>
+    $(window).ready(function(){
+        $(".btnint").click(initiate_geolocation);
+    });
+
+    function initiate_geolocation() {
+        navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+    }
+
+    function handle_geolocation_query(position){
+       //$('input[name="lat"]').get(0).value = position.coords.latitude;
+       $('input[name="lat"]').val(position.coords.latitude);
+       $('input[name="lng"]').val(position.coords.longitude);
+      }
+</script>
+
+  <button class="btnint" style="background-color:#e74c3c;color:white">
+    Find Me 
+  </button>
+
 
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
-    <%= label_tag(:query, "")%>
-    <%= text_field_tag(:query) %>
-    <button class="btn" type="submit" style="background-color:#34495e;color:white">
-      Search
-    </button>
-  <% end %>
-<br>
+  <%= label_tag(:query, "")%>
+  <%= text_field_tag(:query) %>
+  <input type="hidden" name="lat" value="">
+  <input type="hidden" name="lng" value="">
+  <button class="btn"  type="submit" style="background-color:#34495e;color:white">
+    Search
+  </button>
+<% end %>
+
 <div id="search_results" class="row">
   <% if @search_results %>
     <% @search_results['places'].each do |venue| %>
-        <div class="well span4 offset2">
-          <h4><%= venue.name  %><br></h4>
-          <h5><%= venue.location.address  %> <%=venue.location['city']%></h5>
-          <p>Cross Streets: <%= venue.location['crossStreet']%></p>
-          <%=form_tag "/venues", method: "post" do %>
-            <input type="hidden" name="venue[name]" value="<%= venue.name %>">
-            <input type="hidden" name="venue[foursquare_id]" value="<%= venue.id%>">
-            <input type="hidden" name="venue[address]" value="<%= venue.location.address  %>">
-            <input type="hidden" name="venue[city]" value="<%=venue.location['city']%>">
-            <input type="hidden" name="venue[cross_street]" value="<%= venue.location['crossStreet']%>">
-            <input type="hidden" name="venue[lat]" value="<%= venue.location.lat  %>">
-            <input type="hidden" name="venue[lng]" value="<%= venue.location.lng  %>">
-            <input type="hidden" name="venue[img]" value="<%= current_user.id %>">
-            <input type="submit" value="Select">
-          <%end%>
-        </div>
+      <div class="well span4 offset2">
+        <h4><%= venue.name  %><br></h4>
+        <h5><%= venue.shortname %></h5>
+        <h5><%= venue.location.address  %> <%=venue.location['city']%></h5>
+        <p>Cross Streets: <%= venue.location['crossStreet']%></p>
+        <p>Phone: <%=venue.formattedphone%></p>
+        <%=form_tag "/venues", method: "post" do %>
+          <input type="hidden" name="venue[name]" value="<%= venue.name %>">
+          <input type="hidden" name="venue[foursquare_id]" value="<%= venue.id%>">
+          <input type="hidden" name="venue[address]" value="<%= venue.location.address  %>">
+          <input type="hidden" name="venue[city]" value="<%=venue.location['city']%>">
+          <input type="hidden" name="venue[cross_street]" value="<%= venue.location['crossStreet']%>">
+          <input type="hidden" name="venue[formattedphone]" value="<%= venue.formattedphone %>">
+          <input type="hidden" name="venue[shortname]" value="<%= venue.shortname %>">
+          <input  type="hidden" name="venue[lat]" value="<%= venue.location.lat  %>">
+          <input type="hidden" name="venue[lng]" value="<%= venue.location.lng  %>">
+          <input type="hidden" name="venue[img]" value="<%= current_user.id %>">
+          <input type="submit" value="Select">
+        <%end%>
+      </div>
     <%end%>
   <%end%>
 </div>
+
+
+

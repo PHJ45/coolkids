@@ -1,13 +1,12 @@
-There has been <%=@shares.count%> trades
+<h4 style="align:center">There has been <%=@shares.count%> trades</h4>
 
 <% @shares.reverse_each do |share| %> 
-<div class="card">
-  <h3 class="card-heading simple">New Trade</h3>
-  <div class="card-body">
+<div class="share">
+  <div class="share_img" style="pull-left">
     <img src="<%=share.user.img_url%>">
-    <%= share.user.twitter_handle %> 
+  </div>
+  <div class="share_img pull-right">
     <img src="<%=share.reciever.img_url%>">
-    <%= share.reciever.twitter_handle  %>
   </div>
 </div>
 <% end %>
