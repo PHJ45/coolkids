@@ -1,6 +1,6 @@
 <script>
     $(window).ready(function(){
-        $(".btnint").click(initiate_geolocation);
+        $("#int").click(initiate_geolocation);
     });
 
     function initiate_geolocation() {
@@ -14,11 +14,6 @@
       }
 </script>
 
-  <button class="btnint" style="background-color:#e74c3c;color:white">
-    Find Me 
-  </button>
-
-
 <%= form_tag("/venues/search_foursquare", method: "POST") do %>
   <%= label_tag(:query, "")%>
   <%= text_field_tag(:query) %>
@@ -28,6 +23,10 @@
     Search
   </button>
 <% end %>
+<button class="btn" id="int" style="background-color:#e74c3c;color:white">
+  Find Me 
+</button>
+
 
 <div id="search_results" class="row">
   <% if @search_results %>

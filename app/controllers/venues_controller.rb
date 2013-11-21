@@ -28,8 +28,8 @@ class VenuesController < ApplicationController
     # lat = s[0].latitude
     # lng = s[0].longitude
     
-    lat  = params[:lat] #"40.6700" 
-    lng =  params[:lng] #"-73.9400"
+    lat  = params[:lat]
+    lng  =  params[:lng]
     client_secret   = ENV["FOURSQUARE_CONSUMER_SECRET"]
     client_id       = ENV["FOURSQUARE_CONSUMER_KEY"]
     foursquare      = Foursquare::Base.new( client_id , client_secret)
