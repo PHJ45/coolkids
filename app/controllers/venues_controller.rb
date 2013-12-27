@@ -23,10 +23,6 @@ class VenuesController < ApplicationController
   end 
 
   def search_foursquare
-    # ip = request.remote_ip
-    # s = Geocoder.search(ip)
-    # lat = s[0].latitude
-    # lng = s[0].longitude
     
     lat  = params[:lat]
     lng  =  params[:lng]

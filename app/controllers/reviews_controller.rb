@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new(:venue_id => params[:venue_id])
-    #@review.user_id = sessions[:user_id]
+    @review.user_id = sessions[:user_id]
   end
 
   def create 
